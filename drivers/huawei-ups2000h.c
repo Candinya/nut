@@ -10,6 +10,8 @@
 *
  * Huawei UPS2000 driver implemented by
  *   Copyright (C) 2020, 2021 Yifeng Li <tomli@tomli.me>
+ *   The author is not affiliated with Huawei or other manufacturers.
+ * 
  * Huawei UPS2000-H driver implemented by
  *   Copyright (C) 2025 Nya Candy <dev@candinya.com>
  *   The author is not affiliated with Huawei or other manufacturers.
