@@ -78,7 +78,7 @@ SERIAL_USB_DRIVERLIST = \
 	nutdrv_qx
 NEONXML_DRIVERLIST = netxml-ups
 MACOSX_DRIVERLIST = macosx-ups
-MODBUS_DRIVERLIST = phoenixcontact_modbus generic_modbus huawei-ups2000 socomec_jbus adelsystem_cbi apc_modbus
+MODBUS_DRIVERLIST = phoenixcontact_modbus generic_modbus huawei-ups2000 huawei-ups2000h socomec_jbus adelsystem_cbi apc_modbus
 LINUX_I2C_DRIVERLIST = asem pijuice hwmon_ina219
 POWERMAN_DRIVERLIST = powerman-pdu
 IPMI_DRIVERLIST = nut-ipmipsu
@@ -352,6 +352,11 @@ endif WITH_MODBUS_USB
 # (this is both a Modbus and a serial driver)
 huawei_ups2000_SOURCES = huawei-ups2000.c
 huawei_ups2000_LDADD = $(LDADD_DRIVERS_SERIAL) $(LIBMODBUS_LIBS)
+
+# Huawei UPS2000-H driver
+# (this is both a Modbus and a serial driver)
+huawei_ups2000h_SOURCES = huawei-ups2000h.c
+huawei_ups2000h_LDADD = $(LDADD_DRIVERS_SERIAL) $(LIBMODBUS_LIBS)
 
 # Socomec JBUS driver
 # (this is a Modbus driver)
