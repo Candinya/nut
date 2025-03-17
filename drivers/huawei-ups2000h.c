@@ -614,9 +614,6 @@ static int ups2000_update_info(void)
 		uint32_t val_offset = 0;
 		bool invalid = 0;
 
-		if (page > 8 || idx > 399)  /* also suppress compiler warn */
-			fatalx(EXIT_FAILURE, "register calculation overflow!");
-
 		switch (ups2000_var[i].datatype) {
 		case REG_UINT16:
 			val = reg[page][idx];
