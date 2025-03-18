@@ -495,56 +495,56 @@ static struct {
 	const float scaling;   /* scale it down to get the original */
 } ups2000_var[] =
 {
-	{ "input.L1.voltage",             "%.0f", 1000, REG_UINT16,  10.0  },
-	{ "input.L2.voltage",             "%.0f", 1001, REG_UINT16,  10.0  },
-	{ "input.L3.voltage",             "%.0f", 1002, REG_UINT16,  10.0  },
-	{ "input.frequency",              "%.0f", 1003, REG_UINT16,  10.0  },
-	{ "input.bypass.L1.voltage",      "%.0f", 1004, REG_UINT16,  10.0  },
-	{ "input.bypass.L2.voltage",      "%.0f", 1005, REG_UINT16,  10.0  },
-	{ "input.bypass.L3.voltage",      "%.0f", 1006, REG_UINT16,  10.0  },
-	{ "input.bypass.frequency",       "%.0f", 1007, REG_UINT16,  10.0  },
-	{ "output.voltage",            "%.0f", 1008, REG_UINT16,  10.0  },
+	{ "input.L1.voltage",             "%03.1f", 1000, REG_UINT16,  10.0  },
+	{ "input.L2.voltage",             "%03.1f", 1001, REG_UINT16,  10.0  },
+	{ "input.L3.voltage",             "%03.1f", 1002, REG_UINT16,  10.0  },
+	{ "input.frequency",              "%02.1f", 1003, REG_UINT16,  10.0  },
+	{ "input.bypass.L1.voltage",      "%03.1f", 1004, REG_UINT16,  10.0  },
+	{ "input.bypass.L2.voltage",      "%03.1f", 1005, REG_UINT16,  10.0  },
+	{ "input.bypass.L3.voltage",      "%03.1f", 1006, REG_UINT16,  10.0  },
+	{ "input.bypass.frequency",       "%02.1f", 1007, REG_UINT16,  10.0  },
+	{ "output.voltage",               "%03.1f", 1008, REG_UINT16,  10.0  },
 	// { "output.L2.voltage",            "%.0f", 1009, REG_UINT16,  10.0  },
 	// { "output.L3.voltage",            "%.0f", 1010, REG_UINT16,  10.0  },
-	{ "output.current",            "%.0f", 1011, REG_UINT16,  10.0  },
+	{ "output.current",               "%03.1f", 1011, REG_UINT16,  10.0  },
 	// { "output.L2.current",            "%.0f", 1012, REG_UINT16,  10.0  },
 	// { "output.L3.current",            "%.0f", 1013, REG_UINT16,  10.0  },
-	{ "output.frequency",             "%.0f", 1014, REG_UINT16,  10.0  },
-	{ "output.realpower",          "%.0f", 1015, REG_UINT16,  10.0  },
+	{ "output.frequency",             "%02.1f", 1014, REG_UINT16,  10.0  },
+	{ "output.realpower",             "%04.1f", 1015, REG_UINT16,  10.0  },
 	// { "output.L2.realpower",          "%.0f", 1016, REG_UINT16,  10.0  },
 	// { "output.L3.realpower",          "%.0f", 1017, REG_UINT16,  10.0  },
-	{ "output.power",              "%.0f", 1018, REG_UINT16,  10.0  },
+	{ "output.power",                 "%04.1f", 1018, REG_UINT16,  10.0  },
 	// { "output.L2.power",              "%.0f", 1019, REG_UINT16,  10.0  },
 	// { "output.L3.power",              "%.0f", 1020, REG_UINT16,  10.0  },
-	{ "output.load",               "%.0f", 1021, REG_UINT16,  10.0  }, // %
+	{ "ups.load",                     "%03.1f", 1021, REG_UINT16,  10.0  }, // %
 	// { "output.L2.load",               "%.0f", 1022, REG_UINT16,  10.0  }, // %
 	// { "output.L3.load",               "%.0f", 1023, REG_UINT16,  10.0  }, // %
-	{ "ups.temperature",              "%.0f", 1027, REG_INT16,   10.0  },
-	{ "output.inverter.voltage",   "%.0f", 1038, REG_UINT16,  10.0  },
+	{ "ups.temperature",              "%02.1f", 1027, REG_INT16,   10.0  },
+	{ "output.inverter.voltage",      "%03.1f", 1038, REG_UINT16,  10.0  },
 	// { "output.inverter.L2.voltage",   "%.0f", 1039, REG_UINT16,  10.0  },
 	// { "output.inverter.L3.voltage",   "%.0f", 1040, REG_UINT16,  10.0  },
-	{ "input.L1-L2.voltage",          "%.0f", 1055, REG_UINT16,  10.0  },
-	{ "input.L2-L3.voltage",          "%.0f", 1056, REG_UINT16,  10.0  },
-	{ "input.L3-L1.voltage",          "%.0f", 1057, REG_UINT16,  10.0  },
-	{ "output.inverter.current",   "%.0f", 1058, REG_UINT16,  10.0  },
+	{ "input.L1-L2.voltage",          "%03.1f", 1055, REG_UINT16,  10.0  },
+	{ "input.L2-L3.voltage",          "%03.1f", 1056, REG_UINT16,  10.0  },
+	{ "input.L3-L1.voltage",          "%03.1f", 1057, REG_UINT16,  10.0  },
+	{ "output.inverter.current",      "%03.1f", 1058, REG_UINT16,  10.0  },
 	// { "output.inverter.L2.current",   "%.0f", 1059, REG_UINT16,  10.0  },
 	// { "output.inverter.L3.current",   "%.0f", 1060, REG_UINT16,  10.0  },
-	{ "output.inverter.frequency",    "%.0f", 1063, REG_UINT16,  10.0  },
+	{ "output.inverter.frequency",    "%02.1f", 1063, REG_UINT16,  10.0  },
 	// { "ambient.1.temperature",        "%.0f", 1064, REG_INT16,    10.0  }, // 环境温度
 	// { "ambient.1.humidity",           "%.0f", 1065, REG_UINT16,   10.0  }, // 环境湿度
 	// { "旁路运行时间",                "%.0f", 1066, REG_UINT32,   3600.0  }, // Hour
 	// { "逆变运行时间",                "%.0f", 1068, REG_UINT32,   3600.0  }, // Hour
 	// { "风扇寿命",                   "%.0f", 1047, REG_UINT32,   10.0  }, // Year
 	// { "母线电容寿命",                "%.0f", 1048, REG_UINT32,   10.0  }, // Year
-	{ "ambient.2.temperature",        "%.0f", 1347, REG_INT16,    10.0  }, // 输入线缆端子温度
+	{ "ambient.2.temperature",        "%02.1f", 1347, REG_INT16,    10.0  }, // 输入线缆端子温度
 	{ "device.uptime",                "%.0f", 1348, REG_UINT32,   1.0  },
-	{ "ambient.3.temperature",        "%.0f", 1350, REG_INT16,    10.0  }, // 输出线缆端子温度
-	{ "input.L1.current",             "%.0f", 1360, REG_UINT16,  10.0  },
-	{ "input.L2.current",             "%.0f", 1361, REG_UINT16,  10.0  },
-	{ "input.L3.current",             "%.0f", 1362, REG_UINT16,  10.0  },
-	{ "battery.voltage",              "%.0f", 2000, REG_UINT16,  10.0  },
-	{ "battery.current",              "%.0f", 2001, REG_INT16,  10.0  },
-	{ "battery.charge",               "%.0f", 2003, REG_UINT16,  1.0  },
+	{ "ambient.3.temperature",        "%02.1f", 1350, REG_INT16,    10.0  }, // 输出线缆端子温度
+	{ "input.L1.current",             "%03.1f", 1360, REG_UINT16,  10.0  },
+	{ "input.L2.current",             "%03.1f", 1361, REG_UINT16,  10.0  },
+	{ "input.L3.current",             "%03.1f", 1362, REG_UINT16,  10.0  },
+	{ "battery.voltage",              "%03.1f", 2000, REG_UINT16,  10.0  },
+	{ "battery.current",              "%03.1f", 2001, REG_INT16,  10.0  },
+	{ "battery.charge",               "%03.1f", 2003, REG_UINT16,  1.0  },
 	{ "battery.runtime",              "%.0f", 2004, REG_UINT32,  1.0  },
 	// { "battery.temperature",          "%.0f", 2006, REG_INT16,    10.0  },
 	{ "battery.packs",                "%.0f",   2007, REG_UINT16,  1.0  },
