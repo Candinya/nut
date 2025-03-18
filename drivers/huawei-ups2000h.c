@@ -579,7 +579,6 @@ static struct {
 
 static int ups2000_update_info(void)
 {
-	uint16_t reg[9][400];
 	int i;
 
 	upsdebugx(2, "ups2000_update_info");
