@@ -78,7 +78,7 @@ static const char *supported_model[] = {
  *     further into the array ups2000_desc.
  *
  */
-#define UPS2000_IDENT_MAX_FIELDS 9
+#define UPS2000_IDENT_MAX_FIELDS 3
 #define UPS2000_IDENT_MAX_LEN 128
 #define UPS2000_IDENT_OFFSET
 static struct {
