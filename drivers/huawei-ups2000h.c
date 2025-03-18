@@ -455,6 +455,9 @@ void upsdrv_initinfo(void)
 	// 	ups2000_desc[UPS2000_DESC_ESN]);
 	dstate_setinfo("ups.type", "online");
 
+	dstate_setinfo("input.phases", "3");
+	dstate_setinfo("output.phases", "1");
+
 	/* RW variables */
 	upsh.setvar = setvar;
 
@@ -500,32 +503,32 @@ static struct {
 	{ "input.bypass.L2.voltage",      "%.0f", 1005, REG_UINT16,  10.0  },
 	{ "input.bypass.L3.voltage",      "%.0f", 1006, REG_UINT16,  10.0  },
 	{ "input.bypass.frequency",       "%.0f", 1007, REG_UINT16,  10.0  },
-	{ "output.L1.voltage",            "%.0f", 1008, REG_UINT16,  10.0  },
-	{ "output.L2.voltage",            "%.0f", 1009, REG_UINT16,  10.0  },
-	{ "output.L3.voltage",            "%.0f", 1010, REG_UINT16,  10.0  },
-	{ "output.L1.current",            "%.0f", 1011, REG_UINT16,  10.0  },
-	{ "output.L2.current",            "%.0f", 1012, REG_UINT16,  10.0  },
-	{ "output.L3.current",            "%.0f", 1013, REG_UINT16,  10.0  },
+	{ "output.voltage",            "%.0f", 1008, REG_UINT16,  10.0  },
+	// { "output.L2.voltage",            "%.0f", 1009, REG_UINT16,  10.0  },
+	// { "output.L3.voltage",            "%.0f", 1010, REG_UINT16,  10.0  },
+	{ "output.current",            "%.0f", 1011, REG_UINT16,  10.0  },
+	// { "output.L2.current",            "%.0f", 1012, REG_UINT16,  10.0  },
+	// { "output.L3.current",            "%.0f", 1013, REG_UINT16,  10.0  },
 	{ "output.frequency",             "%.0f", 1014, REG_UINT16,  10.0  },
-	{ "output.L1.realpower",          "%.0f", 1015, REG_UINT16,  10.0  },
-	{ "output.L2.realpower",          "%.0f", 1016, REG_UINT16,  10.0  },
-	{ "output.L3.realpower",          "%.0f", 1017, REG_UINT16,  10.0  },
-	{ "output.L1.power",              "%.0f", 1018, REG_UINT16,  10.0  },
-	{ "output.L2.power",              "%.0f", 1019, REG_UINT16,  10.0  },
-	{ "output.L3.power",              "%.0f", 1020, REG_UINT16,  10.0  },
-	{ "output.L1.load",               "%.0f", 1021, REG_UINT16,  10.0  }, // %
-	{ "output.L2.load",               "%.0f", 1022, REG_UINT16,  10.0  }, // %
-	{ "output.L3.load",               "%.0f", 1023, REG_UINT16,  10.0  }, // %
+	{ "output.realpower",          "%.0f", 1015, REG_UINT16,  10.0  },
+	// { "output.L2.realpower",          "%.0f", 1016, REG_UINT16,  10.0  },
+	// { "output.L3.realpower",          "%.0f", 1017, REG_UINT16,  10.0  },
+	{ "output.power",              "%.0f", 1018, REG_UINT16,  10.0  },
+	// { "output.L2.power",              "%.0f", 1019, REG_UINT16,  10.0  },
+	// { "output.L3.power",              "%.0f", 1020, REG_UINT16,  10.0  },
+	{ "output.load",               "%.0f", 1021, REG_UINT16,  10.0  }, // %
+	// { "output.L2.load",               "%.0f", 1022, REG_UINT16,  10.0  }, // %
+	// { "output.L3.load",               "%.0f", 1023, REG_UINT16,  10.0  }, // %
 	{ "ups.temperature",              "%.0f", 1027, REG_INT16,   10.0  },
-	{ "output.inverter.L1.voltage",   "%.0f", 1038, REG_UINT16,  10.0  },
-	{ "output.inverter.L2.voltage",   "%.0f", 1039, REG_UINT16,  10.0  },
-	{ "output.inverter.L3.voltage",   "%.0f", 1040, REG_UINT16,  10.0  },
+	{ "output.inverter.voltage",   "%.0f", 1038, REG_UINT16,  10.0  },
+	// { "output.inverter.L2.voltage",   "%.0f", 1039, REG_UINT16,  10.0  },
+	// { "output.inverter.L3.voltage",   "%.0f", 1040, REG_UINT16,  10.0  },
 	{ "input.L1-L2.voltage",          "%.0f", 1055, REG_UINT16,  10.0  },
 	{ "input.L2-L3.voltage",          "%.0f", 1056, REG_UINT16,  10.0  },
 	{ "input.L3-L1.voltage",          "%.0f", 1057, REG_UINT16,  10.0  },
-	{ "output.inverter.L1.current",   "%.0f", 1058, REG_UINT16,  10.0  },
-	{ "output.inverter.L2.current",   "%.0f", 1059, REG_UINT16,  10.0  },
-	{ "output.inverter.L3.current",   "%.0f", 1060, REG_UINT16,  10.0  },
+	{ "output.inverter.current",   "%.0f", 1058, REG_UINT16,  10.0  },
+	// { "output.inverter.L2.current",   "%.0f", 1059, REG_UINT16,  10.0  },
+	// { "output.inverter.L3.current",   "%.0f", 1060, REG_UINT16,  10.0  },
 	{ "output.inverter.frequency",    "%.0f", 1063, REG_UINT16,  10.0  },
 	{ "ambient.1.temperature",        "%.0f", 1064, REG_INT16,    10.0  }, // 环境温度
 	{ "ambient.1.humidity",           "%.0f", 1065, REG_UINT16,   10.0  }, // 环境湿度
