@@ -590,8 +590,12 @@ static int ups2000_update_info(void)
 	 * We only support 1 UPS, thus it's always 10000. Register
 	 * 1000 becomes 11000.
 	 */
-	r = ups2000_read_registers(modbus_ctx, 11000, 373, reg[0]);
-	if (r != 373)
+	r = ups2000_read_registers(modbus_ctx, 11000, 70, reg[0]);
+	if (r != 70)
+		return 1;
+	
+	r = ups2000_read_registers(modbus_ctx, 11340, 30, &reg[0][340]);
+	if (r != 30)
 		return 1;
 
 	r = ups2000_read_registers(modbus_ctx, 12000, 109, reg[1]);
