@@ -755,6 +755,11 @@ static struct {
 		{ "OB ECO",   6, -1, NULL, NULL },
 		{ NULL,      -1, -1, NULL, NULL },
 	}},
+	{ 1043, 0, {
+		{ "CAL",     -1,  2, NULL, NULL },  /* battery self-test */
+		{ "LB",      -1,  6, NULL, NULL },
+		{ NULL,      -1, -1, NULL, NULL },
+	}},
 	/*
 	 * Note: 3 = float charging, 4 = equalization charging, but
 	 * both of them are reported as "charging", not "floating".
@@ -767,13 +772,6 @@ static struct {
 		{ "CHRG",     3, -1, "battery.charger.status", "charging"    },
 		{ "CHRG",     4, -1, "battery.charger.status", "charging"    },
 		{ "DISCHRG",  5, -1, "battery.charger.status", "discharging" },
-		{ NULL,      -1, -1, NULL, NULL },
-	}},
-	{ 2108, 0, {
-		{ "CAL",     2,  -1, NULL, NULL }, // 浅放电测试
-		{ "CAL",     3,  -1, NULL, NULL }, // 定时浅放电测试
-		{ "CAL",     4,  -1, NULL, NULL }, // 核对性容量测试
-		{ "CAL",     5,  -1, NULL, NULL }, // 分组核对性容量测试
 		{ NULL,      -1, -1, NULL, NULL },
 	}},
 	{ 0, 0, { { NULL, -1, -1, NULL, NULL } } }
@@ -898,7 +896,7 @@ static struct {
 	},
 	{
 		false, 40164, 3, ALARM_CLEAR_AUTO, LOG_WARNING,
-		26, 1, "LB", "Battery undervoltage",
+		26, 1, NULL, "Battery undervoltage",
 		NULL,
 	},
 	{
