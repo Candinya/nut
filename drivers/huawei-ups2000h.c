@@ -530,8 +530,8 @@ static struct {
 	// { "output.inverter.L2.current",   "%.0f", 1059, REG_UINT16,  10.0  },
 	// { "output.inverter.L3.current",   "%.0f", 1060, REG_UINT16,  10.0  },
 	{ "output.inverter.frequency",    "%.0f", 1063, REG_UINT16,  10.0  },
-	{ "ambient.1.temperature",        "%.0f", 1064, REG_INT16,    10.0  }, // 环境温度
-	{ "ambient.1.humidity",           "%.0f", 1065, REG_UINT16,   10.0  }, // 环境湿度
+	// { "ambient.1.temperature",        "%.0f", 1064, REG_INT16,    10.0  }, // 环境温度
+	// { "ambient.1.humidity",           "%.0f", 1065, REG_UINT16,   10.0  }, // 环境湿度
 	// { "旁路运行时间",                "%.0f", 1066, REG_UINT32,   3600.0  }, // Hour
 	// { "逆变运行时间",                "%.0f", 1068, REG_UINT32,   3600.0  }, // Hour
 	// { "风扇寿命",                   "%.0f", 1047, REG_UINT32,   10.0  }, // Year
