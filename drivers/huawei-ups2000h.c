@@ -459,8 +459,8 @@ void upsdrv_initinfo(void)
 	dstate_setinfo("output.phases", "1");
 
 	dstate_setinfo("ambient.count", "2");
-	dstate_setinfo("ambient.1.name", "输入线缆端子温度");
-	dstate_setinfo("ambient.2.name", "输出线缆端子温度");
+	dstate_setinfo("ambient.1.name", "Input Cable Terminal Temperature");
+	dstate_setinfo("ambient.2.name", "Output Cable Terminal Temperature");
 	
 
 	/* RW variables */
