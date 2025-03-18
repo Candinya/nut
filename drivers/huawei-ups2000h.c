@@ -600,34 +600,60 @@ static int ups2000_update_info(void)
 	for (i = 0; ups2000_var[i].name != NULL; i++) {
 		uint16_t reg[2];
 		uint16_t reg_id = 10000 + ups2000_var[i].reg;
-		uint32_t val;
+		uint32_t raw_val;
+		float val;
 		bool invalid = 0;
 
 		switch (ups2000_var[i].datatype) {
 		case REG_UINT16:
+			// 读取
 			if (ups2000_read_registers(modbus_ctx, reg_id, 1, &reg[0]) != 1) {
 				return 1;
 			}
-			val = reg[0];
-			if (val == REG_UINT16_INVALID)
+
+			// 校验
+			raw_val = reg[0];
+			if (raw_val == REG_UINT16_INVALID) {
 				invalid = 1;
+			}
+
+			// 转换
+			val = (float) raw_val;
 			break;
 		case REG_INT16:
+			// 读取
 			if (ups2000_read_registers(modbus_ctx, reg_id, 1, &reg[0]) != 1) {
 				return 1;
 			}
-			val = reg[0];
-			if (val == REG_INT16_INVALID)
+
+			// 校验
+			raw_val = reg[0];
+			if (raw_val == REG_INT16_INVALID) {
 				invalid = 1;
+			}
+
+			// 转换
+			val = (float) raw_val;
+			if (raw_val > 0x8000) {
+				// 第一位是符号位，所以其实是负数
+				val -= 0x8000
+			}
 			break;
 		case REG_UINT32:
+			// 读取
 			if (ups2000_read_registers(modbus_ctx, reg_id, 2, &reg[0]) != 2) {
 				return 1;
 			}
-			val  = (uint32_t)(reg[0]) << 16;
-			val |= (uint32_t)(reg[1]);
-			if (val == REG_UINT32_INVALID)
+
+			// 校验
+			raw_val  = (uint32_t)(reg[0]) << 16;
+			raw_val |= (uint32_t)(reg[1]);
+			if (raw_val == REG_UINT32_INVALID){
 				invalid = 1;
+			}
+
+			// 转换
+			val = (float) raw_val;
 			break;
 		default:
 			fatalx(EXIT_FAILURE, "invalid data type in register table!");
@@ -648,7 +674,7 @@ static int ups2000_update_info(void)
 #pragma GCC diagnostic ignored "-Wformat-security"
 #endif
 		dstate_setinfo(ups2000_var[i].name, ups2000_var[i].fmt,
-			(float) val / ups2000_var[i].scaling);
+			val / ups2000_var[i].scaling);
 #ifdef HAVE_PRAGMAS_FOR_GCC_DIAGNOSTIC_IGNORED_FORMAT_NONLITERAL
 #pragma GCC diagnostic pop
 #endif
