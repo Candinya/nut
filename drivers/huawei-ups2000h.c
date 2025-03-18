@@ -555,8 +555,8 @@ static struct {
 	{ "battery.capacity",             "%.0f",   2033, REG_UINT16,  1.0  },
 	// { "电池运行时间",                "%.0f", 2088, REG_UINT32,  3600.0  }, // Hour
 	// { "电池SOH",                    "%.0f",   2098, REG_UINT16,  1.0  }, // %
-	{ "battery.temperature.cell.max",  "%.0f", 2101, REG_INT16,    10.0  },
-	{ "battery.temperature.cell.min",  "%.0f", 2102, REG_INT16,    10.0  },
+	// { "battery.temperature.cell.max",  "%.0f", 2101, REG_INT16,    10.0  },
+	// { "battery.temperature.cell.min",  "%.0f", 2102, REG_INT16,    10.0  },
 	// { "锂电在位状态",                 "%.0f",   2103, REG_UINT32,  1.0  }, // %
 	{ "battery.voltage.cell.max",      "%.0f", 2105, REG_UINT16,  10.0  }, // 注1：x1363 == 0或者1时，增益为10，x1363 == 2时，增益为1000
 	{ "battery.voltage.cell.min",      "%.0f", 2106, REG_UINT16,  10.0  }, // 注1：x1363 == 0或者1时，增益为10，x1363 == 2时，增益为1000
