@@ -912,7 +912,7 @@ static struct {
 		"UPS will shut down or transfer to bypass mode in 5-10 minutes.",
 	},
 	{
-		false, 40173, 3, ALARM_CLEAR_AUTO, LOG_ALERT,
+		false, 40174, 3, ALARM_CLEAR_AUTO, LOG_ALERT,
 		66, 2, "OVER", "Output overload (110%-130%)",
 		"UPS will shut down or transfer to bypass mode in 30-60 seconds.",
 	},
@@ -923,68 +923,19 @@ static struct {
 		"rated output. Or: battery is overdischarged.",
 	},
 	{
-		false, 40179, 14, ALARM_CLEAR_MANUAL, LOG_ALERT,
-		42, 15, NULL, "Rectifier fault (internal fault)",
-		"Bus voltage is lower than 320 V.",
-	},
-	{
-		false, 40179, 15, ALARM_CLEAR_MANUAL, LOG_ALERT,
-		42, 17, NULL, "Rectifier fault (internal fault)",
-		"Bus voltage is higher than 450 V.",
-	},
-	{
-		false, 40180, 1, ALARM_CLEAR_MANUAL, LOG_ALERT,
-		42, 18, NULL, "Rectifier fault (internal fault)",
-		"Bus voltage is lower than 260 V.",
-	},
-	{
-		false, 40180, 5, ALARM_CLEAR_AUTO, LOG_ALERT,
-		42, 24, NULL, "EEPROM fault (internal fault)",
-		"Faulty EEPROM. All settings are restored to "
-		"factory default and cannot be saved.",
-	},
-	{
-		false, 40180, 6, ALARM_CLEAR_MANUAL, LOG_ALERT,
-		42, 27, NULL, "Inverter fault (internal fault)",
-		"Inverter output overvoltage, undervoltage or "
-		"undercurrent.",
-	},
-	{
-		false, 40180, 7, ALARM_CLEAR_DEPENDING, LOG_ALERT,
-		42, 28, NULL, "Inverter fault (internal fault)",
-		"The inverter output voltage is lower than 100 V.",
-	},
-	{
-		false, 40180, 10, ALARM_CLEAR_MANUAL, LOG_ALERT,
-		42, 31, NULL, "Inverter fault (internal fault)",
-		"The difference between the absolute value of the positive bus "
-		"voltage and that of the negative bus voltage is 100 V.",
-	},
-	{
-		false, 40180, 11, ALARM_CLEAR_DEPENDING, LOG_ALERT,
-		42, 32, NULL, "UPS internal overtemperature",
+		false, 40156, 3, ALARM_CLEAR_DEPENDING, LOG_ALERT,
+		30, 1, NULL, "UPS internal overtemperature",
 		"The ambient temperature is over 50 degree C, "
 		"switching to bypass mode.",
 	},
 	{
-		false, 40180, 13, ALARM_CLEAR_MANUAL, LOG_ALERT,
-		42, 36, NULL, "Charger fault (internal fault)",
-		"The charger has no output. Faulty internal connections.",
-	},
-	{
-		false, 40182, 4, ALARM_CLEAR_MANUAL, LOG_ALERT,
-		42, 42, NULL, "Charger fault (internal fault)",
-		"The charger has no output while the inverter is on, "
-		"battery undervoltage. Faulty switching transistor.",
-	},
-	{
-		false, 40182, 13, ALARM_CLEAR_MANUAL, LOG_ALERT,
-		66, 3, "OVER", "Output overload shutdown",
+		false, 40173, 3, ALARM_CLEAR_MANUAL, LOG_ALERT,
+		64, 1, "OVER", "Output overload shutdown",
 		"UPS has shutdown or transferred to bypass mode.",
 	},
 	{
-		false, 40182, 14, ALARM_CLEAR_MANUAL, LOG_ALERT,
-		66, 4, "OVER", "Bypass output overload shutdown",
+		false, 40174, 2, ALARM_CLEAR_MANUAL, LOG_ALERT,
+		64, 2, "OVER", "Bypass output overload shutdown",
 		"UPS has shutdown, bypass output was overload and exceeded "
 		"time limit.",
 	},
