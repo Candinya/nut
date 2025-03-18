@@ -558,8 +558,8 @@ static struct {
 	// { "battery.temperature.cell.max",  "%.0f", 2101, REG_INT16,    10.0  },
 	// { "battery.temperature.cell.min",  "%.0f", 2102, REG_INT16,    10.0  },
 	// { "锂电在位状态",                 "%.0f",   2103, REG_UINT32,  1.0  }, // %
-	{ "battery.voltage.cell.max",      "%.0f", 2105, REG_UINT16,  10.0  }, // 注1：x1363 == 0或者1时，增益为10，x1363 == 2时，增益为1000
-	{ "battery.voltage.cell.min",      "%.0f", 2106, REG_UINT16,  10.0  }, // 注1：x1363 == 0或者1时，增益为10，x1363 == 2时，增益为1000
+	// { "battery.voltage.cell.max",      "%.0f", 2105, REG_UINT16,  10.0  }, // 注1：x1363 == 0或者1时，增益为10，x1363 == 2时，增益为1000
+	// { "battery.voltage.cell.min",      "%.0f", 2106, REG_UINT16,  10.0  }, // 注1：x1363 == 0或者1时，增益为10，x1363 == 2时，增益为1000
 	// { "A相并机输出有功功率",           "%.0f", 4000, REG_UINT16,  10.0  },
 	// { "B相并机输出有功功率",           "%.0f", 4001, REG_UINT16,  10.0  },
 	// { "C相并机输出有功功率",           "%.0f", 4002, REG_UINT16,  10.0  },
