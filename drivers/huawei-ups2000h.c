@@ -581,7 +581,6 @@ static int ups2000_update_info(void)
 {
 	uint16_t reg[9][400];
 	int i;
-	int r;
 
 	upsdebugx(2, "ups2000_update_info");
 
@@ -590,49 +589,38 @@ static int ups2000_update_info(void)
 	 * We only support 1 UPS, thus it's always 10000. Register
 	 * 1000 becomes 11000.
 	 */
-	r = ups2000_read_registers(modbus_ctx, 11000, 70, reg[0]);
-	if (r != 70)
-		return 1;
-	
-	r = ups2000_read_registers(modbus_ctx, 11340, 30, &reg[0][340]);
-	if (r != 30)
-		return 1;
-
-	r = ups2000_read_registers(modbus_ctx, 12000, 109, reg[1]);
-	if (r != 109)
-		return 1;
-
-	r = ups2000_read_registers(modbus_ctx, 14000, 15, reg[3]);
-	if (r != 15)
-		return 1;
-
-	r = ups2000_read_registers(modbus_ctx, 19000, 22, reg[8]);
-	if (r != 22)
-		return 1;
 
 	for (i = 0; ups2000_var[i].name != NULL; i++) {
-		uint16_t reg_id = ups2000_var[i].reg;
-		uint8_t page = (uint8_t)(reg_id / 1000 - 1);
-		uint8_t idx =  (uint8_t)(reg_id % 1000);
+		uint16_t reg[2];
+		uint16_t reg_id = 10000 + ups2000_var[i].reg;
 		uint32_t val;
 		uint32_t val_offset = 0;
 		bool invalid = 0;
 
 		switch (ups2000_var[i].datatype) {
 		case REG_UINT16:
-			val = reg[page][idx];
+			if (ups2000_read_registers(modbus_ctx, reg_id, 1, &reg[0]) != 1) {
+				return 1;
+			}
+			val = reg[0];
 			if (val == REG_UINT16_INVALID)
 				invalid = 1;
 			break;
 		case REG_INT16:
-			val = reg[page][idx];
+			if (ups2000_read_registers(modbus_ctx, reg_id, 1, &reg[0]) != 1) {
+				return 1;
+			}
+			val = reg[0];
 			val_offset = 0x8000; // Convert to signed
 			if (val == REG_INT16_INVALID)
 				invalid = 1;
 			break;
 		case REG_UINT32:
-			val  = (uint32_t)(reg[page][idx]) << 16;
-			val |= (uint32_t)(reg[page][idx + 1]);
+			if (ups2000_read_registers(modbus_ctx, reg_id, 2, &reg[0]) != 2) {
+				return 1;
+			}
+			val  = (uint32_t)(reg[0]) << 16;
+			val |= (uint32_t)(reg[1]);
 			if (val == REG_UINT32_INVALID)
 				invalid = 1;
 			break;
