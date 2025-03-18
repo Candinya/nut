@@ -601,7 +601,7 @@ static int ups2000_update_info(void)
 		uint16_t reg[2];
 		uint16_t reg_id = 10000 + ups2000_var[i].reg;
 		uint32_t val;
-		uint32_t val_offset = 0;
+		float val_offset = 0;
 		bool invalid = 0;
 
 		switch (ups2000_var[i].datatype) {
@@ -650,7 +650,7 @@ static int ups2000_update_info(void)
 #pragma GCC diagnostic ignored "-Wformat-security"
 #endif
 		dstate_setinfo(ups2000_var[i].name, ups2000_var[i].fmt,
-			(float) (val - val_offset) / ups2000_var[i].scaling);
+			((float) val - val_offset) / ups2000_var[i].scaling);
 #ifdef HAVE_PRAGMAS_FOR_GCC_DIAGNOSTIC_IGNORED_FORMAT_NONLITERAL
 #pragma GCC diagnostic pop
 #endif
