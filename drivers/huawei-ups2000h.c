@@ -547,13 +547,13 @@ static struct {
 	{ "battery.charge",               "%.0f", 2003, REG_UINT16,  1.0  },
 	{ "battery.runtime",              "%.0f", 2004, REG_UINT32,  1.0  },
 	// { "battery.temperature",          "%.0f", 2006, REG_INT16,    10.0  },
+	{ "battery.packs",                "%.0f",   2007, REG_UINT16,  1.0  },
 	// { "正组电池电压",                "%.0f", 2024, REG_UINT16,  10.0  },
 	// { "负组电池电压",                "%.0f", 2025, REG_UINT16,  10.0  },
 	// { "正组电池电流",                "%.0f", 2026, REG_INT16,  10.0  },
 	// { "负组电池电流",                "%.0f", 2027, REG_INT16,  10.0  },
+	{ "battery.capacity",             "%.0f",   2033, REG_UINT16,  1.0  },
 	// { "电池运行时间",                "%.0f", 2088, REG_UINT32,  3600.0  }, // Hour
-	{ "battery.packs",                "%.0f",   2096, REG_UINT16,  1.0  },
-	{ "battery.capacity",             "%.0f",   2097, REG_UINT16,  1.0  },
 	// { "电池SOH",                    "%.0f",   2098, REG_UINT16,  1.0  }, // %
 	{ "battery.temperature.cell.max",  "%.0f", 2101, REG_INT16,    10.0  },
 	{ "battery.temperature.cell.min",  "%.0f", 2102, REG_INT16,    10.0  },
