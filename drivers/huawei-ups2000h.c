@@ -458,6 +458,11 @@ void upsdrv_initinfo(void)
 	dstate_setinfo("input.phases", "3");
 	dstate_setinfo("output.phases", "1");
 
+	dstate_setinfo("ambient.count", "2");
+	dstate_setinfo("ambient.1.name", "输入线缆端子温度");
+	dstate_setinfo("ambient.2.name", "输出线缆端子温度");
+	
+
 	/* RW variables */
 	upsh.setvar = setvar;
 
@@ -536,9 +541,9 @@ static struct {
 	// { "逆变运行时间",                "%.0f", 1068, REG_UINT32,   3600.0  }, // Hour
 	// { "风扇寿命",                   "%.0f", 1047, REG_UINT32,   10.0  }, // Year
 	// { "母线电容寿命",                "%.0f", 1048, REG_UINT32,   10.0  }, // Year
-	{ "ambient.2.temperature",        "%02.1f", 1347, REG_INT16,    10.0  }, // 输入线缆端子温度
+	{ "ambient.1.temperature",        "%02.1f", 1347, REG_INT16,    10.0  }, // 输入线缆端子温度
 	{ "device.uptime",                "%.0f", 1348, REG_UINT32,   1.0  },
-	{ "ambient.3.temperature",        "%02.1f", 1350, REG_INT16,    10.0  }, // 输出线缆端子温度
+	{ "ambient.2.temperature",        "%02.1f", 1350, REG_INT16,    10.0  }, // 输出线缆端子温度
 	{ "input.L1.current",             "%03.1f", 1360, REG_UINT16,  10.0  },
 	{ "input.L2.current",             "%03.1f", 1361, REG_UINT16,  10.0  },
 	{ "input.L3.current",             "%03.1f", 1362, REG_UINT16,  10.0  },
