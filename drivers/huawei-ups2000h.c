@@ -546,7 +546,7 @@ static struct {
 	{ "battery.current",              "%.0f", 2001, REG_INT16,  10.0  },
 	{ "battery.charge",               "%.0f", 2003, REG_UINT16,  1.0  },
 	{ "battery.runtime",              "%.0f", 2004, REG_UINT32,  1.0  },
-	{ "battery.temperature",          "%.0f", 2006, REG_INT16,    10.0  },
+	// { "battery.temperature",          "%.0f", 2006, REG_INT16,    10.0  },
 	// { "正组电池电压",                "%.0f", 2024, REG_UINT16,  10.0  },
 	// { "负组电池电压",                "%.0f", 2025, REG_UINT16,  10.0  },
 	// { "正组电池电流",                "%.0f", 2026, REG_INT16,  10.0  },
