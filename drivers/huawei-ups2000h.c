@@ -515,12 +515,12 @@ static struct {
 	// { "output.L2.current",            "%.0f", 1012, REG_UINT16,  10.0  },
 	// { "output.L3.current",            "%.0f", 1013, REG_UINT16,  10.0  },
 	{ "output.frequency",             "%02.1f", 1014, REG_UINT16,  10.0  },
-	{ "output.realpower",             "%04.1f", 1015, REG_UINT16,  10.0  },
-	// { "output.L2.realpower",          "%.0f", 1016, REG_UINT16,  10.0  },
-	// { "output.L3.realpower",          "%.0f", 1017, REG_UINT16,  10.0  },
-	{ "output.power",                 "%04.1f", 1018, REG_UINT16,  10.0  },
-	// { "output.L2.power",              "%.0f", 1019, REG_UINT16,  10.0  },
-	// { "output.L3.power",              "%.0f", 1020, REG_UINT16,  10.0  },
+	{ "output.realpower",             "%04.1f", 1015, REG_UINT16,  0.01  },  // 10 / K
+	// { "output.L2.realpower",          "%.0f", 1016, REG_UINT16,  0.01  },  // 10 / K
+	// { "output.L3.realpower",          "%.0f", 1017, REG_UINT16,  0.01  },  // 10 / K
+	{ "output.power",                 "%04.1f", 1018, REG_UINT16,  0.01  },  // 10 / K
+	// { "output.L2.power",              "%.0f", 1019, REG_UINT16,  0.01  },  // 10 / K
+	// { "output.L3.power",              "%.0f", 1020, REG_UINT16,  0.01  },  // 10 / K
 	{ "ups.load",                     "%03.1f", 1021, REG_UINT16,  10.0  }, // %
 	// { "output.L2.load",               "%.0f", 1022, REG_UINT16,  10.0  }, // %
 	// { "output.L3.load",               "%.0f", 1023, REG_UINT16,  10.0  }, // %
