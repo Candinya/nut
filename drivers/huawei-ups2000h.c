@@ -660,7 +660,7 @@ static int ups2000_update_info(void)
 		}
 
 		if (invalid) {
-			upslogx(LOG_ERR, "register %04d has invalid value %04x,", reg_id, val);
+			upslogx(LOG_ERR, "register %04d has invalid value %04x,", reg_id, raw_val);
 			return 1;
 		}
 
