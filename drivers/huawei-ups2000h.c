@@ -770,10 +770,10 @@ static struct {
 		{ NULL,      -1, -1, NULL, NULL },
 	}},
 	{ 2108, 0, {
-		{ "CAL",     -1,  2, NULL, NULL }, // 浅放电测试
-		{ "CAL",     -1,  3, NULL, NULL }, // 定时浅放电测试
-		{ "CAL",     -1,  4, NULL, NULL }, // 核对性容量测试
-		{ "CAL",     -1,  5, NULL, NULL }, // 分组核对性容量测试
+		{ "CAL",     2,  -1, NULL, NULL }, // 浅放电测试
+		{ "CAL",     3,  -1, NULL, NULL }, // 定时浅放电测试
+		{ "CAL",     4,  -1, NULL, NULL }, // 核对性容量测试
+		{ "CAL",     5,  -1, NULL, NULL }, // 分组核对性容量测试
 		{ NULL,      -1, -1, NULL, NULL },
 	}},
 	{ 0, 0, { { NULL, -1, -1, NULL, NULL } } }
@@ -898,7 +898,7 @@ static struct {
 	},
 	{
 		false, 40164, 3, ALARM_CLEAR_AUTO, LOG_WARNING,
-		26, 1, NULL, "Battery undervoltage",
+		26, 1, "LB", "Battery undervoltage",
 		NULL,
 	},
 	{
