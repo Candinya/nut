@@ -633,11 +633,7 @@ static int ups2000_update_info(void)
 			}
 
 			// 转换
-			val = (float) raw_val;
-			if (raw_val > 0x8000) {
-				// 第一位是符号位，所以其实是负数
-				val -= 0x8000;
-			}
+			val = (float) (int16_t) raw_val;
 			break;
 		case REG_UINT32:
 			// 读取
