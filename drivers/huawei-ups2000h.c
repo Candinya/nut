@@ -657,7 +657,7 @@ static int ups2000_update_info(void)
 
 		if (invalid) {
 			upslogx(LOG_ERR, "register %04d has invalid value %04x,", reg_id, raw_val);
-			return 1;
+			return 0; // 丢弃数据而不是触发错误重启
 		}
 
 #ifdef HAVE_PRAGMAS_FOR_GCC_DIAGNOSTIC_IGNORED_FORMAT_NONLITERAL
@@ -749,6 +749,7 @@ static struct {
 		{ "OB",       3, -1, NULL, NULL },
 		{ "OL ECO",   5, -1, NULL, NULL },
 		{ "OB ECO",   6, -1, NULL, NULL },
+		{ "OL OB",    7, -1, NULL, NULL }, // 联合供电
 		{ NULL,      -1, -1, NULL, NULL },
 	}},
 	/*
@@ -759,10 +760,11 @@ static struct {
 	 * mode", which is not true for UPS2000.
 	 */
 	{ 2002, 1, {
-		{ "",         2, -1, "battery.charger.status", "resting"     },
-		{ "CHRG",     3, -1, "battery.charger.status", "charging"    },
-		{ "CHRG",     4, -1, "battery.charger.status", "charging"    },
-		{ "DISCHRG",  5, -1, "battery.charger.status", "discharging" },
+		{ "",         1, -1, "battery.charger.status", "resting"     }, // 非充非放
+		{ "",         2, -1, "battery.charger.status", "resting"     }, // 休眠
+		{ "CHRG",     3, -1, "battery.charger.status", "floating"    }, // 浮充
+		{ "CHRG",     4, -1, "battery.charger.status", "charging"    }, // 均充
+		{ "DISCHRG",  5, -1, "battery.charger.status", "discharging" }, // 放电
 		{ NULL,      -1, -1, NULL, NULL },
 	}},
 	{ 2108, 0, {
