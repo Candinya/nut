@@ -1469,6 +1469,7 @@ static struct ups2000_cmd_t {
 	{ "test.battery.stop",        2023,  1, REG_NULL, FUNC_NULL },
 	{ "beeper.enable",            1062,  0, REG_NULL, FUNC_NULL },
 	{ "beeper.disable",           1062,  1, REG_NULL, FUNC_NULL },
+	{ "beeper.mute",              1149,  1, REG_NULL, FUNC_NULL },
 	{ "load.off",                 1030,  1, REG_NULL, FUNC_NULL },
 	{ "bypass.stop",              1029,  1, REG_NULL, FUNC_NULL },
 	{ "load.on",                  1029, -1, REG_NULL, ups2000_instcmd_load_on                  },
